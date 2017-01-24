@@ -4,7 +4,7 @@ angular
     var vm = this;
     vm.book = bookService.getBook();
     $scope.atras = function() {
-    $state.go('app.books');
+    $state.go('app.container.books');
 
     };
 

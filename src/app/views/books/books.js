@@ -8,11 +8,10 @@ angular
     console.log(vm.books);
  });
 
-
     vm.goToBook = function(bookId){
       //$rootScope.book = vm.books[bookId];
     bookService.setBook(vm.books[bookId]);
-    $state.go('app.bookDetail',{id: bookId});
+    $state.go('app.container.bookDetail',{id: bookId});
     };
 
 

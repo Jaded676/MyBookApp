@@ -13,7 +13,19 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: 'app/views/hello/hello.html',
       controller: 'HelloController as ctrl'
     })
-    .state('app.books', {
+
+    .state('app.container', {
+      url: 'container/',
+      abstract: true,
+      views: {
+        'container': {
+          templateUrl: 'app/views/container/container.html',
+          controller: 'ContainerController as ctrlContainer'
+        }
+      }
+    })
+
+    .state('app.container.books', {
       url: 'books',
       views: {
         'booksView': {
@@ -22,7 +34,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       }
     })
-      .state('app.bookDetail', {
+      .state('app.container.bookDetail', {
         url: 'bookDetail/:id',
         views: {
           'booksView': {
@@ -31,5 +43,5 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
           }
         }
       });
-  $urlRouterProvider.otherwise('books');
+  $urlRouterProvider.otherwise('container/books');
 }
